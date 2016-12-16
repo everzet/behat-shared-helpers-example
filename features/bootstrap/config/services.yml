@@ -1,0 +1,25 @@
+services:
+  # This is a custom service definition.
+  # It could be any helper class you want to share across multiple contexts. Each context will get
+  # the same instance of the service, but only in the scope of a single scenario.
+  my_shared_service:
+    class: "SharedService"
+
+  # This is a definition for your context service.
+  # It needs to be tagged with `fob.context_service` and implement the `Context` interface, but
+  # other than that can be any class and can have any number of arguments, some of which can be
+  # services and helpers like the one above.
+  contexts.my_custom_context_1:
+    class: "CustomContext1"
+    arguments:
+      - "@my_shared_service"
+    tags:
+      - {name: "fob.context_service"}
+
+  # This is another context service definition.
+  contexts.my_custom_context_2:
+    class: "CustomContext2"
+    arguments:
+      - "@my_shared_service"
+    tags:
+      - {name: "fob.context_service"}

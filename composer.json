@@ -1,0 +1,6 @@
+{
+    "require-dev": {
+        "behat/behat": "^3.2",
+        "friends-of-behat/context-service-extension": "^0.3.0"
+    }
+}

@@ -1,0 +1,15 @@
+default:
+  suites:
+    default:
+      contexts: []
+      contexts_services:
+        - "contexts.my_custom_context_1"
+        - "contexts.my_custom_context_2"
+  extensions:
+
+    # Here we enable ContextServiceExtension ...
+    FriendsOfBehat\ContextServiceExtension:
+      imports:
+
+        # ... and import the service (as in Dependency Injection Container) definition:
+        - "features/bootstrap/config/services.yml"
