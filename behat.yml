@@ -1,10 +1,14 @@
 default:
   suites:
     default:
+      # Here we disable normal context classes:
       contexts: []
+      
+      # And use context services instead:
       contexts_services:
         - "contexts.my_custom_context_1"
         - "contexts.my_custom_context_2"
+
   extensions:
 
     # Here we enable ContextServiceExtension ...
